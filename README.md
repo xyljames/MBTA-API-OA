@@ -1,4 +1,4 @@
-# MBTA-API-OA
+# MBTA-API-Practice
 
 ## Story Form
 As an MBTA rider, I would like to know when the next train is going to depart from a specific
