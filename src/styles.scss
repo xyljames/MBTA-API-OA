@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+body {
+    background:#293a4a ;
+    padding:3em;
+    font-family: 'Raleway','Arial';
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    padding: 0;
+}
+
+ul li a {
+font-size: 1.5em
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cButton {
+    background: #ff6c2c;
+    padding: 2px 6px 0 6px;
+    margin: 16px 10px 16px 0px;
+    border-radius: 0.6em;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    height: 30px;
+    width: 135px;
+    display: block;
+}
+
+.logo {
+    width: 10%;
+    height: 10%;
+    margin-bottom: 20px;
+  }
+
+.navlist {
+    display: inline-block !important;
+    margin-right: 30px;
+}

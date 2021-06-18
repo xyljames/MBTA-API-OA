@@ -1,0 +1,47 @@
+ <div class="contentbox">
+  <div class="grid">
+    <div class="list" >
+      <form [formGroup]="form" (ngSubmit)="submit()"> 
+        <div class="form-group">
+            <label for="website">Available Routes</label>
+            <br>
+              <select formControlName="route" class="form-control" (change)="selectRoute($event)">
+                <option><h3>Select a Route</h3></option>
+              <option *ngFor="let route of originRoutesList let i = index" >{{i}}:{{route.id}} => {{route.attributes.direction_destinations&&route.attributes.direction_destinations[1]}} </option>
+          </select>
+          <br>
+          <div *ngIf="filteredStopList.length>0">
+            <label for="stop">Available Stops</label>
+            <select formControlName="stop" class="form-control"  >
+              <option><h3>Select a Stop</h3></option>
+            <option *ngFor="let stop of filteredStopList">{{stop.attributes.address?stop.attributes.address:stop.attributes.name}}</option>
+        </select>
+          </div>
+
+          <div *ngIf="filteredDirections.length>0 && filteredStopList.length>0">
+            <label for="direction">Available Directions</label>
+            <select formControlName="direction" class="form-control"  >
+              <option><h3>Select a direction</h3></option>
+            <option *ngFor="let direction of filteredDirections">{{direction}}</option>
+        </select>
+          </div>
+          
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    </div>
+    <div class="view">
+      <ng-container *ngIf="formValue">
+        <h3>{{formValue.route}}</h3>
+        <h3>{{formValue.stop}}</h3>
+        <h3>{{formValue.direction}}</h3>
+      </ng-container>
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+ 

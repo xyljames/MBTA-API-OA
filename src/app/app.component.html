@@ -1,0 +1,10 @@
+
+<div style="margin-left: 40px;">
+ 
+  <ul *ngIf="routingPages">
+    <li class="navlist" *ngFor =" let page of routingPages"> <a [routerLink]=page.routerLink> {{page.pageName}}</a></li>
+  </ul>
+  
+  <router-outlet></router-outlet>
+   
+</div>
