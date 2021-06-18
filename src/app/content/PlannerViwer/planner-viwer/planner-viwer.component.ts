@@ -43,26 +43,37 @@ export class PlannerViwerComponent implements OnInit {
   
   submit(){
 
-    this.formValue =this.form.value;
-    this.formValue.route = this.formValue.route.substring(2,this.formValue.route.length)
-    console.log('next step',this.formValue)
+    this.formValue =this.form.value
+    this.formValue.route = this.formValue.route.substring(this.formValue.route.indexOf(':')+1,this.formValue.route.length)
+    this.formValue.stop = this.formValue.stop.substring(0,this.formValue.stop.length)
+
+    let stopId = this.formValue.stop.substring(0,this.formValue.stop.indexOf(':'))
+    console.log('id for time',stopId)
+    
+   
   }
 
   selectRoute(e:any){
     let index = e.target.value.indexOf('=>')
-    this.realRoute = e.target.value.slice(index+2)
+    console.log("e.target.value",e.target.value)
+    let realRoute = e.target.value.slice(index+2)
   
-    console.log(this.realRoute)
-    this.selectStopByRoute(this.realRoute)
+    console.log(realRoute)
+    this.selectStopByRoute(realRoute)
+
     let getIndexFromValue = e.target.value.substring(0,1)
     this.selectDirections( getIndexFromValue )
   }
 
   selectStopByRoute(routeValue:any) {
+
+    console.log(routeValue)
      let a = this.originStopList
      this.filteredStopList = this.originStopList.filter((stop:any) =>
      (stop.attributes.name.includes(routeValue)))
-     this.originStopList = a
+     this.filteredStopList = [...new Set(this.filteredStopList)]
+     console.log('xxx',this.filteredStopList)
+ 
   }
   selectDirections( index:number) {
   this.filteredDirections = this.originRoutesList[index].attributes.direction_names

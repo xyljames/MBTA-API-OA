@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { PlannerViwerComponent } from './content/photoViwer/planner-viwer/planner-viwer.component';
+import { PlannerViwerComponent } from './content/PlannerViwer/planner-viwer/planner-viwer.component';
 
 const routes: Routes = [
   {

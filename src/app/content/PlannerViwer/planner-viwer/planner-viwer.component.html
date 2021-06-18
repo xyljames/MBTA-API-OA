@@ -7,14 +7,14 @@
             <br>
               <select formControlName="route" class="form-control" (change)="selectRoute($event)">
                 <option><h3>Select a Route</h3></option>
-              <option *ngFor="let route of originRoutesList let i = index" >{{i}}:{{route.id}} => {{route.attributes.direction_destinations&&route.attributes.direction_destinations[1]}} </option>
+              <option *ngFor="let route of originRoutesList let i = index" >{{i}}:{{route.id}}=>{{route.attributes.direction_destinations&&route.attributes.direction_destinations[1]}} </option>
           </select>
           <br>
           <div *ngIf="filteredStopList.length>0">
             <label for="stop">Available Stops</label>
             <select formControlName="stop" class="form-control"  >
               <option><h3>Select a Stop</h3></option>
-            <option *ngFor="let stop of filteredStopList">{{stop.attributes.address?stop.attributes.address:stop.attributes.name}}</option>
+            <option *ngFor="let stop of filteredStopList">{{stop.id}}:{{stop.attributes.description?stop.attributes.description:stop.attributes.name}}</option>
         </select>
           </div>
 
