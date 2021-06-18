@@ -32,9 +32,17 @@
     </div>
     <div class="view">
       <ng-container *ngIf="formValue">
-        <h3>{{formValue.route}}</h3>
-        <h3>{{formValue.stop}}</h3>
-        <h3>{{formValue.direction}}</h3>
+        <ul>
+          <label for="">Trip Details:</label>
+          <li>{{formValue.route}}</li>
+          <li>{{formValue.stop}}</li>
+          <li>{{formValue.direction}}</li>
+        </ul>
+      </ng-container>
+
+      <ng-container *ngIf="prediction">
+        <label for="">Departure Time:</label>
+        <h2>{{prediction}}</h2>
       </ng-container>
     </div>
   </div>
