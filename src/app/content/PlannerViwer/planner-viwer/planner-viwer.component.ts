@@ -41,7 +41,7 @@ export class PlannerViwerComponent implements OnInit {
   // form submit to get predicted depature time
   submit(){
 
-    // data clean up
+    // data clean up 
     this.formValue =this.form.value
     this.formValue.route = this.formValue.route.substring(this.formValue.route.indexOf(':')+1,this.formValue.route.length)
     this.formValue.stop = this.formValue.stop.substring(0,this.formValue.stop.length)
@@ -49,7 +49,7 @@ export class PlannerViwerComponent implements OnInit {
 
     // pass stop id to fetch predictions
     this.fetchService.fetchPredictions(stopId).subscribe((res:any)=> {
-      res.data.length=== 0? this.prediction = 'No Predicted Departure Time Found, Please Try Agian':res.data.map((item:any)=> {
+      res.data.length=== 0? this.prediction = 'No Predicted Departure Time Found, Please Try Other Routes':res.data.map((item:any)=> {
         if( item.attributes.departure_time) {
                 this.prediction = item.attributes.departure_time
              }
@@ -58,6 +58,7 @@ export class PlannerViwerComponent implements OnInit {
   }
  
   selectRoute(e:any){
+    // data clean up, e,g: Orange=>Oak Grove return Oak Grove
     let index = e.target.value.indexOf('=>')
     let realRoute = e.target.value.slice(index+2)
   

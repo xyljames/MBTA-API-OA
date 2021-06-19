@@ -11,7 +11,10 @@ export class FetchServiceService {
   predictionsURL = `https://api-v3.mbta.com/predictions?filter[stop]=`
   constructor(private http:HttpClient){
   }
+  // fetch routes
    fetchRoutes =()=>this.http.get(this.routesURL)
+   //fetch stops
    fetchStops =()=>this.http.get(this.stopsURL)
+   //fetch predictions by id
    fetchPredictions = (id:string)=>this.http.get(this.predictionsURL+id)
 }

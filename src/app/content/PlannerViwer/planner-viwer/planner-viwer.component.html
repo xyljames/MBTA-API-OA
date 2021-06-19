@@ -17,7 +17,6 @@
             <option *ngFor="let stop of filteredStopList">{{stop.id}}:{{stop.attributes.description?stop.attributes.description:stop.attributes.name}}</option>
         </select>
           </div>
-
           <div *ngIf="filteredDirections.length>0 && filteredStopList.length>0">
             <label for="direction">Available Directions</label>
             <select formControlName="direction" class="form-control"  >

@@ -3,5 +3,5 @@ export const routingPagesNames = [{
     pageName:'About'
 },   {
     routerLink:'planner_viwer',
-    pageName:'planner'
+    pageName:'Planner'
 }]
